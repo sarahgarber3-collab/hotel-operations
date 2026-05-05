@@ -26,6 +26,13 @@ public class Reservation {
             return 124.00;
         }
     }
+    public double getReservationTotal() {
+        double pricePerNight = getPrice();
+        if (weekend) {
+         pricePerNight = pricePerNight * 1.10;
+        }
+        return pricePerNight * numberOfNights;
+    }
 
     public boolean isWeekend() {
         return weekend;
