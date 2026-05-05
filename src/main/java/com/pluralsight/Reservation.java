@@ -18,18 +18,19 @@ public class Reservation {
     public void setRoomType(String roomType) {
         this.roomType = roomType;
     }
+
     public double getPrice() {
-        if(roomType.equalsIgnoreCase("king")) {
+        if (roomType.equalsIgnoreCase("king")) {
             return 139.00;
-        }
-        else {
+        } else {
             return 124.00;
         }
     }
+
     public double getReservationTotal() {
         double pricePerNight = getPrice();
         if (weekend) {
-         pricePerNight = pricePerNight * 1.10;
+            pricePerNight = pricePerNight * 1.10;
         }
         return pricePerNight * numberOfNights;
     }
@@ -49,5 +50,4 @@ public class Reservation {
     public void setNumberOfNights(int numberOfNights) {
         this.numberOfNights = numberOfNights;
     }
-
 }
